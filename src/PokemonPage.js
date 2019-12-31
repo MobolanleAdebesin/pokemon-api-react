@@ -19,16 +19,11 @@ class PokemonPage extends Component {
   getData = () => {
     let pokeIndex = parseInt(this.state.id) + 1;
     let url = `https://pokeapi.co/api/v2/pokemon/${pokeIndex}`;
-    // console.log(url);
     axios
       .get(url)
       .then(res => {
         console.log(res.data);
         this.setState({ pokemonData: res.data });
-        //Abilities
-        // First four moves
-        // Types
-        // Stats:  Speed Attack Defense HP
       })
       .catch(err => {
         console.log("There was an error " + err);
@@ -42,7 +37,7 @@ class PokemonPage extends Component {
       let imageIndex = parseInt(this.state.id) + 1;
       if (this.state.pokemonData.types) {
         return (
-          <div>
+          <div className="PokemonPage">
             <h3>{pokemon.name}</h3>
             <img
               className="PokemonPage-image"
@@ -77,7 +72,7 @@ class PokemonPage extends Component {
         );
       }
       return (
-        <div>
+        <div className="PokemonPage">
           <h3>{pokemon.name}</h3>
           <img
             className="PokemonPage-image"
