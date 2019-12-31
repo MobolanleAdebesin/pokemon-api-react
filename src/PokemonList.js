@@ -10,7 +10,7 @@ class PokemonList extends Component {
         <div>
           {this.props.data.map((pokemon, i) => (
             <div key={i}>
-              <Link to={`/Pokemon/${pokemon.name}`}>{pokemon.name}</Link>
+              <Link to={`/Pokemon/${i}`}>{pokemon.name}</Link>
             </div>
           ))}
         </div>
