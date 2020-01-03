@@ -21,6 +21,9 @@ class App extends Component {
     axios
       .get(url)
       .then(function(res) {
+        console.log(res);
+        console.log(res.data);
+        console.log(res.data.results);
         let results = res.data.results;
         return results;
       })

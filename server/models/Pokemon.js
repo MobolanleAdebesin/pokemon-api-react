@@ -4,13 +4,11 @@ const Schema = mongoose.Schema;
 pokemonSchema = new Schema({
   name: {
     type: String,
-    trim: true,
-    required: true
+    trim: true
   },
   url: {
     type: String,
-    trim: true,
-    required: true
+    trim: true
   }
 });
 
