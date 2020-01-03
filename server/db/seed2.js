@@ -1,10 +1,6 @@
 const Pokemon = require("../models/Pokemon");
 const axios = require("axios");
 
-// Pokemon.find({}).then(pokemon => {
-
-// });
-let pokemonStats = [];
 for (let i = 1; i <= 150; i++) {
   let url = `https://pokeapi.co/api/v2/pokemon/${i}/`;
   console.log(url);
