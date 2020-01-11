@@ -1,3 +1,27 @@
 .PokemonList {
   margin: 2rem;
 }
+.PokemonList-header {
+  grid-column: 1 / span 3;
+  grid-row: 1 / span 1;
+  text-align: center;
+}
+.PokemonList-card-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.PokemonList-card {
+  border: 1px slategray solid;
+  margin: 1rem;
+  padding: 1rem;
+}
+.PokemonList-link {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  align-items: center;
+}
+
+.PokemonList-image {
+  width: 5rem;
+}

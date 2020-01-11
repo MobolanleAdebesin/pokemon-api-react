@@ -76,10 +76,34 @@ class PokemonPage extends Component {
           <h3>{pokemon.name}</h3>
           <img
             className="PokemonPage-image"
-            src={`https://pokeres.bastionbot.org/images/pokemon/${imageIndex}.png`}
+            src={pokemon.image}
             alt={pokemon.name}
           />
-          <button onClick={this.getData}>{pokemon.name}</button>
+          <div>
+            <h3>Stats</h3>
+            <h5>Type</h5>
+            <ul>
+              {this.props.data[this.state.id].stats.type.map((type, i) => {
+                return <li key={i}>{type.type.name}</li>;
+              })}
+            </ul>
+            <h5>Abilities</h5>
+            <ul>
+              {this.props.data[this.state.id].stats.abilities.map(
+                (ability, i) => {
+                  return <li key={i}>{ability.ability.name}</li>;
+                }
+              )}
+            </ul>
+            <h5>Stats</h5>
+            <ul>
+              {this.props.data[this.state.id].stats.stats.map((stat, i) => {
+                return (
+                  <li key={i}>{`${stat.stat.name}: ${stat.base_stat}`}</li>
+                );
+              })}
+            </ul>
+          </div>
         </div>
       );
     }

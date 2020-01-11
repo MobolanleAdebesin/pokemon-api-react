@@ -4,7 +4,7 @@ import "./App.css";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import pokemonData from "./pokemonData";
 import PokemonList from "./PokemonList";
-import Home from "./Home";
+import Game from "./Game";
 import About from "./About";
 import PokemonPage from "./PokemonPage";
 
@@ -22,9 +22,15 @@ class App extends Component {
         <Router>
           {/* The navigation bar is being rendered outside of the routes so that it appears on every route/page */}
           <nav>
-            <Link to="/">Pokemon</Link>
-            <Link to="/Home">Home</Link>
-            <Link to="/About">About</Link>
+            <Link className="App-links" to="/About">
+              About
+            </Link>
+            <Link className="App-links" to="/">
+              Pokemon
+            </Link>
+            <Link className="App-links" to="/Home">
+              Game
+            </Link>
           </nav>
           {/* Defined routes */}
           <Switch>
@@ -35,7 +41,10 @@ class App extends Component {
                 <PokemonPage {...routerProps} {...this.state} />
               )}
             />
-            <Route path="/Home" component={Home} />
+            <Route
+              path="/Home"
+              render={routerProps => <Game {...routerProps} {...this.state} />}
+            />
             <Route path="/About" component={About} />
             {/* This route leads to the pokemon list. The information about all 150 information is passed  from the App state to the PokemonList component as routerProps */}
             <Route
